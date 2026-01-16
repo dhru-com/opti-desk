@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { X, Save, User, Phone, Calendar, MapPin, Hash } from 'lucide-react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '@/../amplify/data';
+import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 
 const client = generateClient<Schema>();

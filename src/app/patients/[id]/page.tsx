@@ -4,7 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { User, Calendar, Phone, MapPin, Hash, Plus, FileText, Receipt, Upload, Image as ImageIcon } from 'lucide-react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '@/../amplify/data';
+import type { Schema } from '@/../amplify/data/resource';
 import Link from 'next/link';
 import { uploadData, getUrl } from 'aws-amplify/storage';
 import { fetchUserAttributes } from 'aws-amplify/auth';

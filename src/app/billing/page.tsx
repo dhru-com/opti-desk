@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '@/../amplify/data';
+import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import { Receipt, Search, Plus, User, Clock, CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';

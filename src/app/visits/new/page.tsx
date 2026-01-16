@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { X, Save, Eye, Activity, ClipboardList, Stethoscope } from 'lucide-react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '@/../amplify/data';
+import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 
 const client = generateClient<Schema>();

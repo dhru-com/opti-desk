@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { X, Save, Building, Globe, CreditCard, Type, Image as ImageIcon } from 'lucide-react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '@/../amplify/data';
+import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 
 const client = generateClient<Schema>();

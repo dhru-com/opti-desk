@@ -4,7 +4,7 @@ import { Search, Plus, User } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '@/../amplify/data';
+import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 
 const client = generateClient<Schema>();

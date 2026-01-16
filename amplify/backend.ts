@@ -1,7 +1,7 @@
 import { defineBackend } from '@aws-amplify/backend';
-import { auth } from './auth';
-import { data } from './data';
-import { storage } from './storage';
+import { auth } from './auth/resource';
+import { data } from './data/resource';
+import { storage } from './storage/resource';
 import { pdfGenerator } from './functions/pdf-generator/resource';
 
 defineBackend({
