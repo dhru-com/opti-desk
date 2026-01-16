@@ -200,7 +200,7 @@ export default function PatientProfilePage() {
                     <span className="text-[10px] text-gray-400">{new Date(item.date).toLocaleDateString()}</span>
                   </div>
                   <p className="text-sm font-medium text-gray-800 line-clamp-2">
-                    {(item.data.clinicalData as any)?.diagnosis || 'Routine Checkup'}
+                    {(item.data as any).clinicalData?.diagnosis || 'Routine Checkup'}
                   </p>
                   <div className="flex gap-4">
                     <Link href={`/visits/${item.data.id}/prescription`} className="text-xs text-green-600 font-bold">
@@ -213,13 +213,13 @@ export default function PatientProfilePage() {
               {item.type === 'INVOICE' && (
                 <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm space-y-2">
                   <div className="flex justify-between items-start">
-                    <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest">Invoice {item.data.invoiceNo}</span>
+                    <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest">Invoice {(item.data as any).invoiceNo}</span>
                     <span className="text-[10px] text-gray-400">{new Date(item.date).toLocaleDateString()}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-bold">{currency} {item.data.total.toFixed(2)}</span>
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${item.data.status === 'PAID' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
-                      {item.data.status}
+                    <span className="text-sm font-bold">{currency} {(item.data as any).total.toFixed(2)}</span>
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${(item.data as any).status === 'PAID' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                      {(item.data as any).status}
                     </span>
                   </div>
                 </div>
@@ -228,21 +228,21 @@ export default function PatientProfilePage() {
               {item.type === 'FILE' && (
                 <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm space-y-2">
                   <div className="flex justify-between items-start">
-                    <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest">{item.data.type}</span>
+                    <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest">{(item.data as any).type}</span>
                     <span className="text-[10px] text-gray-400">{new Date(item.date).toLocaleDateString()}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="bg-purple-50 p-2 rounded-lg text-purple-600">
-                      {item.data.type === 'IMAGE' ? <ImageIcon size={18} /> : <FileText size={18} />}
+                      {(item.data as any).type === 'IMAGE' ? <ImageIcon size={18} /> : <FileText size={18} />}
                     </div>
                     <button
                       onClick={async () => {
-                        const url = await getUrl({ path: item.data.s3Path });
+                        const url = await getUrl({ path: (item.data as any).s3Path });
                         window.open(url.url.toString(), '_blank');
                       }}
                       className="text-sm font-bold text-gray-700 truncate flex-1 text-left"
                     >
-                      {item.data.name}
+                      {(item.data as any).name}
                     </button>
                   </div>
                 </div>
