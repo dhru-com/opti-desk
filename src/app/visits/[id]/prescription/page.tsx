@@ -2,12 +2,10 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { generateClient } from 'aws-amplify/data';
+import { client } from '@/lib/amplifyClient';
 import type { Schema } from '@/../amplify/data/resource';
 import { X, FileText, Share2, Plus, Trash2, Save } from 'lucide-react';
 import { fetchUserAttributes } from 'aws-amplify/auth';
-
-const client = generateClient<Schema>();
 
 export default function PrescriptionPage() {
   const params = useParams();

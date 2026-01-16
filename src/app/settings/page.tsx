@@ -3,11 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { X, Save, Building, Globe, CreditCard, Type, Image as ImageIcon } from 'lucide-react';
-import { generateClient } from 'aws-amplify/data';
+import { client } from '@/lib/amplifyClient';
 import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
-
-const client = generateClient<Schema>();
 
 export default function SettingsPage() {
   const router = useRouter();

@@ -20,6 +20,7 @@
     "@aws-amplify/backend": "^1.19.0",
     "@aws-amplify/backend-cli": "^1.8.1",
     "@parcel/watcher": "^2.5.4",
+    "@parcel/watcher-linux-x64-glibc": "^2.5.4",
     "@aws-cdk/cli-plugin-contract": "^2.182.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

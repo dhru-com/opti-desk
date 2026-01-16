@@ -4,10 +4,8 @@ import { Settings, LogOut, User, Building, Shield, HelpCircle, ChevronRight, Bar
 import { signOut, fetchUserAttributes } from 'aws-amplify/auth';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { generateClient } from 'aws-amplify/data';
+import { client } from '@/lib/amplifyClient';
 import type { Schema } from '@/../amplify/data/resource';
-
-const client = generateClient<Schema>();
 
 export default function MorePage() {
   const router = useRouter();

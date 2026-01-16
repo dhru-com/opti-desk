@@ -2,12 +2,10 @@
 
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { generateClient } from 'aws-amplify/data';
+import { client } from '@/lib/amplifyClient';
 import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import Link from 'next/link';
-
-const client = generateClient<Schema>();
 
 export default function TodayPage() {
   const [appointments, setAppointments] = useState<any[]>([]);

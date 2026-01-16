@@ -4,11 +4,9 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { X, Save, User, Phone, Calendar, MapPin, Hash } from 'lucide-react';
-import { generateClient } from 'aws-amplify/data';
+import { client } from '@/lib/amplifyClient';
 import type { Schema } from '@/../amplify/data/resource';
 import { fetchUserAttributes } from 'aws-amplify/auth';
-
-const client = generateClient<Schema>();
 
 export default function AddPatientPage() {
   const router = useRouter();

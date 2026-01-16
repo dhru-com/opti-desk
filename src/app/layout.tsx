@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ConfigureAmplifyClientSide } from "@/components/auth/ConfigureAmplify";
 import AuthWrapper from "@/components/auth/AuthWrapper";
 import BottomNav from "@/components/layout/BottomNav";
 
@@ -39,7 +38,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 text-gray-900 pb-20`}
       >
-        <ConfigureAmplifyClientSide />
         <AuthWrapper>
           <div className="max-w-md mx-auto min-h-screen relative">
             {children}
