@@ -18,7 +18,7 @@ export default function TodayPage() {
     month: 'short',
     day: 'numeric'
   });
-
+//
   useEffect(() => {
     fetchTodayData();
   }, []);
@@ -113,16 +113,16 @@ export default function TodayPage() {
                     {appt.status}
                   </div>
                 </div>
-                
+
                 <div className="flex gap-2 pt-1">
-                  <Link 
-                    href={`/visits/new?patientId=${appt.patientId}&appointmentId=${appt.id}`} 
+                  <Link
+                    href={`/visits/new?patientId=${appt.patientId}&appointmentId=${appt.id}`}
                     className="flex-1 bg-blue-600 text-white text-xs font-bold py-2 rounded-lg text-center"
                   >
                     Start Visit
                   </Link>
                   {appt.status === 'SCHEDULED' && (
-                    <button 
+                    <button
                       onClick={() => updateStatus(appt.id, 'NO_SHOW')}
                       className="px-3 border border-gray-200 text-gray-500 text-xs font-bold py-2 rounded-lg"
                     >
